@@ -1,3 +1,5 @@
-"use strict";
-import { QRCode } from "./components/qr-svg";
-module.exports = { QRCode };
+import QrSvg from './QrSvg';
+
+export { QrSvg };
+
+export default QrSvg;

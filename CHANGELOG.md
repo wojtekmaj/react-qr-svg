@@ -1,1 +1,0 @@
-Please see the [Releases](https://github.com/no23reason/react-qr-svg/releases) page for changes on each version.

@@ -1,9 +1,37 @@
 {
-    "presets": ["env", "react"],
-    "plugins": [
-        "syntax-dynamic-import",
-        "transform-class-properties",
-        "transform-es2015-destructuring",
-        "transform-object-rest-spread"
-    ]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "loose": true
+      }
+    ],
+    "@babel/react"
+  ],
+  "env": {
+    "production-esm": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "modules": false,
+            "loose": true
+          }
+        ],
+        "@babel/react"
+      ]
+    },
+    "test": {
+      "presets": [
+        [
+          "@babel/env",
+          {
+            "targets": {
+              "node": "current"
+            }
+          }
+        ]
+      ]
+    }
+  }
 }
