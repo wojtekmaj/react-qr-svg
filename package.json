@@ -1,6 +1,6 @@
 {
   "name": "@wojtekmaj/react-qr-svg",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Render QR codes as SVG in your React app",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
