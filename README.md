@@ -56,10 +56,10 @@ Renders QR code as SVG.
 | Prop name       | Description                                                                                                             | Default value | Example values                                                         |
 | --------------- | ----------------------------------------------------------------------------------------------------------------------- | ------------- | ---------------------------------------------------------------------- |
 | bgColor         | Background color.                                                                                                       | `"white"`     | <ul><li>Color name: `"beige"`</li><li>Color hex: `"#fefefe"`</li></ul> |
-| cellClassPrefix | Cell class name prefix. If provided, `bgColor` and `fgColor` are ignored.                                               | `""`          | `"qr-svg__cell"`                                                       |
+| cellClassPrefix | Cell class name prefix.                                                                                                 | `""`          | `"qr-svg__cell"`                                                       |
 | fgColor         | Foreground color.                                                                                                       | `"black"`     | <ul><li>Color name: `"black"`</li><li>Color hex: `"#000000"`</li></ul> |
 | level           | [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`. | `"L"`         | `"M"`                                                                  |
-| type            | Type (size). Can be any number from 0 to 40. Set to `0` to use the smallest possible size.                              | `0`           | `0`                                                                    |
+| type            | Type (size). Can be any number from 0 to 40. Set to `0` or leave as undefined to use the smallest possible size.        | `0`           | `10`                                                                   |
 | value           | Value to render.                                                                                                        | n/a           | `"Hello world"`                                                        |
 
 You can also specify all the props that are valid for the `<svg>` React element (e.g. `style`, `className` or `width`).
