@@ -2,10 +2,28 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import QRCodeFactory from 'qrcode-generator';
 
+const rect = 'v1h1v-1z';
+
+function makePath(qrcode, reverse) {
+  const moduleCount = qrcode.getModuleCount();
+
+  let d = '';
+
+  for (let row = 0; row < moduleCount; row++) {
+    for (let col = 0; col < moduleCount; col++) {
+      if (qrcode.isDark(row, col) === (reverse ? false : true)) {
+        d += `M${col},${row}${rect}`;
+      }
+    }
+  }
+
+  return d;
+}
+
 export default function QRCode({
-  bgColor = '#ffffff',
-  cellClassPrefix = '',
-  fgColor = '#000000',
+  bgColor = '#fff',
+  cellClassPrefix,
+  fgColor = '#000',
   level = 'L',
   type = 0,
   value = '',
@@ -18,39 +36,18 @@ export default function QRCode({
     return qrcode;
   }, [level, type, value]);
 
-  const moduleCount = qrcode.getModuleCount();
+  const size = qrcode.getModuleCount();
 
-  const cellClassName = cellClassPrefix && `${cellClassPrefix}-cell`;
-  const emptyCellClassName = cellClassPrefix && `${cellClassName} ${cellClassPrefix}-cell-empty`;
-  const filledCellClassName = cellClassPrefix && `${cellClassName} ${cellClassPrefix}-cell-filled`;
+  const bgPath = makePath(qrcode, true);
+  const fgPath = makePath(qrcode);
 
-  let cellIndex = 0;
+  const bgClassName = cellClassPrefix && `${cellClassPrefix} ${cellClassPrefix}-empty`;
+  const fgClassName = cellClassPrefix && `${cellClassPrefix} ${cellClassPrefix}-filled`;
 
   return (
-    <svg
-      shapeRendering="crispEdges"
-      viewBox={[0, 0, moduleCount, moduleCount].join(' ')}
-      {...otherProps}
-    >
-      {Array.from(new Array(moduleCount)).map((row, rowIndex) =>
-        Array.from(new Array(moduleCount)).map((col, colIndex) => {
-          const isDark = qrcode.isDark(rowIndex, colIndex);
-          const className = isDark ? filledCellClassName : emptyCellClassName;
-          const fill = isDark ? fgColor : bgColor;
-
-          return (
-            <rect
-              key={cellIndex++}
-              className={className}
-              fill={fill}
-              height={1}
-              width={1}
-              x={colIndex}
-              y={rowIndex}
-            />
-          );
-        }),
-      )}
+    <svg shapeRendering="crispEdges" viewBox={`0 0 ${size} ${size}`} {...otherProps}>
+      <path d={bgPath} fill={bgColor} className={bgClassName} />
+      <path d={fgPath} fill={fgColor} className={fgClassName} />
     </svg>
   );
 }
