@@ -7,15 +7,16 @@ export default function QRCode({
   cellClassPrefix = '',
   fgColor = '#000000',
   level = 'L',
+  type = 0,
   value = '',
   ...otherProps
 } = {}) {
   const qrcode = useMemo(() => {
-    const qrcode = new QRCodeFactory(0, level);
+    const qrcode = new QRCodeFactory(type, level);
     qrcode.addData(value);
     qrcode.make();
     return qrcode;
-  }, [level, value]);
+  }, [level, type, value]);
 
   const moduleCount = qrcode.getModuleCount();
 
@@ -59,5 +60,6 @@ QRCode.propTypes = {
   cellClassPrefix: PropTypes.string,
   fgColor: PropTypes.string,
   level: PropTypes.oneOf(['L', 'M', 'Q', 'H']),
+  type: PropTypes.number,
   value: PropTypes.string.isRequired,
 };

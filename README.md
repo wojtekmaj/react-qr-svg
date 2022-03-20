@@ -59,6 +59,7 @@ Renders QR code as SVG.
 | cellClassPrefix | Cell class name prefix. If provided, `bgColor` and `fgColor` are ignored.                                               | `""`          | `"qr-svg__cell"`                                                       |
 | fgColor         | Foreground color.                                                                                                       | `"black"`     | <ul><li>Color name: `"black"`</li><li>Color hex: `"#000000"`</li></ul> |
 | level           | [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`. | `"L"`         | `"M"`                                                                  |
+| type            | Type (size). Can be any number from 0 to 40. Set to `0` to use the smallest possible size.                              | `0`           | `0`                                                                    |
 | value           | Value to render.                                                                                                        | n/a           | `"Hello world"`                                                        |
 
 You can also specify all the props that are valid for the `<svg>` React element (e.g. `style`, `className` or `width`).
