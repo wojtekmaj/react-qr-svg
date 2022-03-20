@@ -1,25 +1,23 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-
-import QRCodeImpl from 'qr.js/lib/QRCode';
-import ErrorCorrectLevel from 'qr.js/lib/ErrorCorrectLevel';
+import QRCodeFactory from 'qrcode-generator';
 
 export default function QRCode({
   bgColor = '#ffffff',
   cellClassPrefix = '',
   fgColor = '#000000',
-  level = ErrorCorrectLevel.L,
+  level = 'L',
   value = '',
   ...otherProps
 } = {}) {
   const qrcode = useMemo(() => {
-    const qrcode = new QRCodeImpl(-1, ErrorCorrectLevel[level]);
+    const qrcode = new QRCodeFactory(0, level);
     qrcode.addData(value);
     qrcode.make();
     return qrcode;
-  }, [value, level]);
+  }, [level, value]);
 
-  const rows = qrcode.modules;
+  const moduleCount = qrcode.getModuleCount();
 
   const cellClassName = cellClassPrefix && `${cellClassPrefix}-cell`;
   const emptyCellClassName = cellClassPrefix && `${cellClassName} ${cellClassPrefix}-cell-empty`;
@@ -30,13 +28,14 @@ export default function QRCode({
   return (
     <svg
       shapeRendering="crispEdges"
-      viewBox={[0, 0, rows.length, rows.length].join(' ')}
+      viewBox={[0, 0, moduleCount, moduleCount].join(' ')}
       {...otherProps}
     >
-      {rows.map((row, rowIndex) =>
-        row.map((cell, colIndex) => {
-          const className = cell ? filledCellClassName : emptyCellClassName;
-          const fill = cell ? fgColor : bgColor;
+      {Array.from(new Array(moduleCount)).map((row, rowIndex) =>
+        Array.from(new Array(moduleCount)).map((col, colIndex) => {
+          const isDark = qrcode.isDark(rowIndex, colIndex);
+          const className = isDark ? filledCellClassName : emptyCellClassName;
+          const fill = isDark ? fgColor : bgColor;
 
           return (
             <rect
@@ -60,6 +59,5 @@ QRCode.propTypes = {
   cellClassPrefix: PropTypes.string,
   fgColor: PropTypes.string,
   level: PropTypes.oneOf(['L', 'M', 'Q', 'H']),
-  size: PropTypes.number,
   value: PropTypes.string.isRequired,
 };

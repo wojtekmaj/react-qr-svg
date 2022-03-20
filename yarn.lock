@@ -1936,7 +1936,7 @@ __metadata:
     prettier: ^2.5.0
     pretty-quick: ^3.1.0
     prop-types: ^15.6.0
-    qr.js: 0.0.0
+    qrcode-generator: ^1.4.4
     react: ^17.0.0
     react-dom: ^17.0.0
     rimraf: ^3.0.0
@@ -5582,10 +5582,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qr.js@npm:0.0.0":
-  version: 0.0.0
-  resolution: "qr.js@npm:0.0.0"
-  checksum: 5ac6c393967bdeaa660e7fd3a501a25eb538c1f6008a4d30ab2b97bbe520e5c236530090773f1578aa0a523cdaa6923c866615e21143f9e7cd22abd41c789b69
+"qrcode-generator@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "qrcode-generator@npm:1.4.4"
+  checksum: 860cfdd2a7a608d34e92cab99774cc08182e1911432f30ed36d16f8a5cdabd7fdf40239caed91fa2691cfe66c8d95c1340a2fc9cc439eed07a9f2eb328c6f527
   languageName: node
   linkType: hard
 
