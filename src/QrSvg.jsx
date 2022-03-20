@@ -4,7 +4,7 @@ import QRCodeFactory from 'qrcode-generator';
 
 const rect = 'v1h1v-1z';
 
-function makePath(qrcode, reverse) {
+function makePath(qrcode, margin, reverse) {
   const moduleCount = qrcode.getModuleCount();
 
   let d = '';
@@ -12,7 +12,7 @@ function makePath(qrcode, reverse) {
   for (let row = 0; row < moduleCount; row++) {
     for (let col = 0; col < moduleCount; col++) {
       if (qrcode.isDark(row, col) === (reverse ? false : true)) {
-        d += `M${col},${row}${rect}`;
+        d += `M${col + margin},${row + margin}${rect}`;
       }
     }
   }
@@ -25,6 +25,7 @@ export default function QRCode({
   cellClassPrefix,
   fgColor = '#000',
   level = 'L',
+  margin = 0,
   type = 0,
   value = '',
   ...otherProps
@@ -36,10 +37,10 @@ export default function QRCode({
     return qrcode;
   }, [level, type, value]);
 
-  const size = qrcode.getModuleCount();
+  const size = qrcode.getModuleCount() + margin * 2;
 
-  const bgPath = makePath(qrcode, true);
-  const fgPath = makePath(qrcode);
+  const bgPath = makePath(qrcode, margin, true);
+  const fgPath = makePath(qrcode, margin);
 
   const bgClassName = cellClassPrefix && `${cellClassPrefix} ${cellClassPrefix}-empty`;
   const fgClassName = cellClassPrefix && `${cellClassPrefix} ${cellClassPrefix}-filled`;
@@ -57,6 +58,7 @@ QRCode.propTypes = {
   cellClassPrefix: PropTypes.string,
   fgColor: PropTypes.string,
   level: PropTypes.oneOf(['L', 'M', 'Q', 'H']),
+  margin: PropTypes.number,
   type: PropTypes.number,
   value: PropTypes.string.isRequired,
 };
