@@ -1795,14 +1795,14 @@ __metadata:
   linkType: hard
 
 "@wojtekmaj/react-qr-svg@npm:latest":
-  version: 0.1.0
-  resolution: "@wojtekmaj/react-qr-svg@npm:0.1.0"
+  version: 0.3.0
+  resolution: "@wojtekmaj/react-qr-svg@npm:0.3.0"
   dependencies:
     prop-types: ^15.6.0
-    qr.js: 0.0.0
+    qrcode-generator: ^1.4.4
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: c94eb35cf68204e1813eadcfd61a0fe44ba885b1b18e29e91e343d077190ccc46c7e0fa8e2709a6ceca00c5bb8cac2ac2c2c4bb954e00203cdd5faf5ae58b3e4
+  checksum: a16d34f4914c274559045217633ca5523903bf6df66657d01ed29d9bf3ab7b677eaa69703195b2e6fac58306dc888231854f6df251882d6bec8f916171647244
   languageName: node
   linkType: hard
 
@@ -4833,10 +4833,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"qr.js@npm:0.0.0":
-  version: 0.0.0
-  resolution: "qr.js@npm:0.0.0"
-  checksum: 5ac6c393967bdeaa660e7fd3a501a25eb538c1f6008a4d30ab2b97bbe520e5c236530090773f1578aa0a523cdaa6923c866615e21143f9e7cd22abd41c789b69
+"qrcode-generator@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "qrcode-generator@npm:1.4.4"
+  checksum: 860cfdd2a7a608d34e92cab99774cc08182e1911432f30ed36d16f8a5cdabd7fdf40239caed91fa2691cfe66c8d95c1340a2fc9cc439eed07a9f2eb328c6f527
   languageName: node
   linkType: hard
 
