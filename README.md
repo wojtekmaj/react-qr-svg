@@ -20,7 +20,7 @@ A minimal demo page can be found in `sample` directory.
 
 Your project needs to use React 16.8 or later.
 
-React-QR-SVG is also compatible with React Native.
+Need library for React Native? Check out [React-Native-QR-SVG](https://github.com/wojtekmaj/react-native-qr-svg).
 
 ### Installation
 
