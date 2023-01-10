@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import QrSvg from '@wojtekmaj/react-qr-svg';
 
-import './Sample.less';
+import './Sample.css';
 
 export default function Sample() {
   const [value, setValue] = useState('Hello world');

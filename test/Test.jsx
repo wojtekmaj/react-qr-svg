@@ -6,7 +6,7 @@ import QualityOptions from './QualityOptions';
 import SizeOptions from './SizeOptions';
 import ValueOptions from './ValueOptions';
 
-import './Test.less';
+import './Test.css';
 
 export default function Test() {
   const [bgColor, setBgColor] = useState();
