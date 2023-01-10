@@ -5,6 +5,7 @@
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "source": "src/index.js",
+  "sideEffects": false,
   "scripts": {
     "build": "yarn build-esm && yarn build-cjs",
     "build-esm": "BABEL_ENV=production-esm babel src -d dist/esm --ignore \"**/*.spec.js,**/*.spec.jsx\"",
