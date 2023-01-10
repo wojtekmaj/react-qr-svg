@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import QRCodeFactory from 'qrcode-generator';
+import qrcodeGenerator from 'qrcode-generator';
 
 const rect = 'v1h1v-1z';
 
@@ -31,7 +31,7 @@ export default function QRCode({
   ...otherProps
 } = {}) {
   const qrcode = useMemo(() => {
-    const qrcode = new QRCodeFactory(type, level);
+    const qrcode = qrcodeGenerator(type, level);
     qrcode.addData(value);
     qrcode.make();
     return qrcode;
