@@ -2,9 +2,64 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import qrcodeGenerator from 'qrcode-generator';
 
+type TypeNumber =
+  | 0 // Automatic type number
+  | 1
+  | 2
+  | 3
+  | 4
+  | 5
+  | 6
+  | 7
+  | 8
+  | 9
+  | 10
+  | 11
+  | 12
+  | 13
+  | 14
+  | 15
+  | 16
+  | 17
+  | 18
+  | 19
+  | 20
+  | 21
+  | 22
+  | 23
+  | 24
+  | 25
+  | 26
+  | 27
+  | 28
+  | 29
+  | 30
+  | 31
+  | 32
+  | 33
+  | 34
+  | 35
+  | 36
+  | 37
+  | 38
+  | 39
+  | 40;
+
+type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
+
+type QrCodeProps = {
+  bgColor?: string;
+  cellClassPrefix?: string;
+  fgColor?: string;
+  level?: ErrorCorrectionLevel;
+  margin?: number;
+  type?: TypeNumber;
+  value: string;
+};
+
 const rect = 'v1h1v-1z';
 
-function makePath(qrcode, margin, reverse) {
+function makePath(qrcode: QRCode, margin: number, reverse?: boolean) {
   const moduleCount = qrcode.getModuleCount();
 
   let d = '';
@@ -29,7 +84,7 @@ export default function QRCode({
   type = 0,
   value = '',
   ...otherProps
-}) {
+}: QrCodeProps) {
   const qrcode = useMemo(() => {
     const qrcode = qrcodeGenerator(type, level);
     qrcode.addData(value);
