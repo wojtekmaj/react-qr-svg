@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 export default function SizeOptions({ size, sizeAuto, setSize, setSizeAuto }) {
-  function onSizeChange(event) {
+  function onSizeChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
     setSize(parseInt(value, 10));
   }
 
-  function onSizeAutoChange(event) {
+  function onSizeAutoChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setSizeAuto(checked);
