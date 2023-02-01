@@ -13,8 +13,8 @@ export default function SizeOptions({ size, sizeAuto, setSize, setSizeAuto }) {
   }
 
   return (
-    <fieldset id="sizeoptions">
-      <legend htmlFor="sizeoptions">Size options</legend>
+    <fieldset>
+      <legend>Size options</legend>
 
       <div>
         <label htmlFor="size">Size</label>

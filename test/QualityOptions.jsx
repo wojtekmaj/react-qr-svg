@@ -9,8 +9,8 @@ export default function QualityOptions({ quality, setQuality }) {
   }
 
   return (
-    <fieldset id="qualityOptions">
-      <legend htmlFor="qualityOptions">Set error correction level</legend>
+    <fieldset>
+      <legend>Set error correction level</legend>
 
       <div>
         <input

@@ -9,8 +9,8 @@ export default function ValueOptions({ setValue, value }) {
   }
 
   return (
-    <fieldset id="valueOptions">
-      <legend htmlFor="valueOptions">Set value</legend>
+    <fieldset>
+      <legend>Set value</legend>
 
       <div>
         <label htmlFor="value">Value</label>
