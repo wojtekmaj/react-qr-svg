@@ -59,7 +59,7 @@ type QrCodeProps = {
 
 const rect = 'v1h1v-1z';
 
-function makePath(qrcode: any, margin: number, reverse?: boolean) {
+function makePath(qrcode: QRCode, margin: number, reverse?: boolean) {
   const moduleCount = qrcode.getModuleCount();
 
   let d = '';
