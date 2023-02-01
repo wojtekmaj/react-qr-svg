@@ -7,7 +7,9 @@ describe('<QrSvg /> component', () => {
   it('renders svg element properly', () => {
     const { container } = render(<QrSvg value="Hello world" />);
 
-    expect(container.children[0]).toBeInTheDocument();
-    expect(container.children[0].tagName).toBe('svg');
+    const firstChild = container.children[0];
+
+    expect(firstChild).toBeInTheDocument();
+    expect(firstChild?.tagName).toBe('svg');
   });
 });
