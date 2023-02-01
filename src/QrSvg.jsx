@@ -29,7 +29,7 @@ export default function QRCode({
   type = 0,
   value = '',
   ...otherProps
-} = {}) {
+}) {
   const qrcode = useMemo(() => {
     const qrcode = qrcodeGenerator(type, level);
     qrcode.addData(value);
