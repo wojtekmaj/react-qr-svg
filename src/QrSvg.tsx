@@ -2,7 +2,7 @@ import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import qrcodeGenerator from 'qrcode-generator';
 
-type TypeNumber =
+export type TypeNumber =
   | 0 // Automatic type number
   | 1
   | 2
@@ -45,7 +45,7 @@ type TypeNumber =
   | 39
   | 40;
 
-type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
+export type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
 
 type QrCodeProps = {
   bgColor?: string;
@@ -84,7 +84,7 @@ export default function QRCode({
   type = 0,
   value = '',
   ...otherProps
-}: QrCodeProps) {
+}: QrCodeProps & Omit<React.SVGProps<SVGSVGElement>, keyof QrCodeProps>) {
   const qrcode = useMemo(() => {
     const qrcode = qrcodeGenerator(type, level);
     qrcode.addData(value);
