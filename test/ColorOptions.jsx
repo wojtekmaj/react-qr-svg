@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 export default function ColorOptions({ bgColor, fgColor, setBgColor, setFgColor }) {
   function onBgColorChange(event) {
     const { value } = event.target;
+
     setBgColor(value);
   }
 
   function onFgColorChange(event) {
     const { value } = event.target;
+
     setFgColor(value);
   }
 
