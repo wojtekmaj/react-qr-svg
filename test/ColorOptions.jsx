@@ -13,8 +13,8 @@ export default function ColorOptions({ bgColor, fgColor, setBgColor, setFgColor 
   }
 
   return (
-    <fieldset id="coloroptions">
-      <legend htmlFor="coloroptions">Color options</legend>
+    <fieldset>
+      <legend>Color options</legend>
 
       <div>
         <label htmlFor="bgColor">Background color</label>
