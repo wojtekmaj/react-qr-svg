@@ -4,11 +4,13 @@ import PropTypes from 'prop-types';
 export default function SizeOptions({ size, sizeAuto, setSize, setSizeAuto }) {
   function onSizeChange(event) {
     const { value } = event.target;
+
     setSize(parseInt(value, 10));
   }
 
   function onSizeAutoChange(event) {
     const { checked } = event.target;
+
     setSizeAuto(checked);
   }
 
