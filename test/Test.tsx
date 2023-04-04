@@ -8,11 +8,13 @@ import ValueOptions from './ValueOptions';
 
 import './Test.css';
 
+import type { ErrorCorrectionLevel, TypeNumber } from './shared/types';
+
 export default function Test() {
-  const [bgColor, setBgColor] = useState();
-  const [fgColor, setFgColor] = useState();
-  const [quality, setQuality] = useState('L');
-  const [size, setSize] = useState(0);
+  const [bgColor, setBgColor] = useState<string>();
+  const [fgColor, setFgColor] = useState<string>();
+  const [quality, setQuality] = useState<ErrorCorrectionLevel>('L');
+  const [size, setSize] = useState<TypeNumber>(0);
   const [sizeAuto, setSizeAuto] = useState(true);
   const [value, setValue] = useState('Hello world');
 

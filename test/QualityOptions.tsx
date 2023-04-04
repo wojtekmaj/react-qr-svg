@@ -1,11 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function QualityOptions({ quality, setQuality }) {
-  function onChange(event) {
+type QualityOptionsProps = {
+  quality: ErrorCorrectionLevel;
+  setQuality: (quality: ErrorCorrectionLevel) => void;
+};
+
+export default function QualityOptions({ quality, setQuality }: QualityOptionsProps) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
-    setQuality(nextValue);
+    setQuality(nextValue as ErrorCorrectionLevel);
   }
 
   return (

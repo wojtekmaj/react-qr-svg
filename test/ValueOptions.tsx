@@ -1,8 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ValueOptions({ setValue, value }) {
-  function onChange(event) {
+type ValueOptionsProps = {
+  setValue: (value: string) => void;
+  value?: string;
+};
+
+export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
     setValue(nextValue);

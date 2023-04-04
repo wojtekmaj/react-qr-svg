@@ -1,14 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function SizeOptions({ size, sizeAuto, setSize, setSizeAuto }) {
-  function onSizeChange(event) {
+type SizeOptionsProps = {
+  setSize: (size: TypeNumber) => void;
+  setSizeAuto: (sizeAuto: boolean) => void;
+  size?: TypeNumber;
+  sizeAuto?: boolean;
+};
+
+export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: SizeOptionsProps) {
+  function onSizeChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
-    setSize(parseInt(value, 10));
+    setSize(Number(value) as TypeNumber);
   }
 
-  function onSizeAutoChange(event) {
+  function onSizeAutoChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { checked } = event.target;
 
     setSizeAuto(checked);
@@ -46,8 +53,8 @@ export default function SizeOptions({ size, sizeAuto, setSize, setSizeAuto }) {
 }
 
 SizeOptions.propTypes = {
-  size: PropTypes.number,
-  sizeAuto: PropTypes.bool,
   setSize: PropTypes.func.isRequired,
   setSizeAuto: PropTypes.func.isRequired,
+  size: PropTypes.number,
+  sizeAuto: PropTypes.bool,
 };

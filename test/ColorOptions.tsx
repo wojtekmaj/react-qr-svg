@@ -1,14 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ColorOptions({ bgColor, fgColor, setBgColor, setFgColor }) {
-  function onBgColorChange(event) {
+type ColorOptionsProps = {
+  bgColor?: string;
+  fgColor?: string;
+  setBgColor: (bgColor: string) => void;
+  setFgColor: (fgColor: string) => void;
+};
+
+export default function ColorOptions({
+  bgColor,
+  fgColor,
+  setBgColor,
+  setFgColor,
+}: ColorOptionsProps) {
+  function onBgColorChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
     setBgColor(value);
   }
 
-  function onFgColorChange(event) {
+  function onFgColorChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
     setFgColor(value);
