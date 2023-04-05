@@ -17,7 +17,7 @@ export default function Sample() {
       </header>
       <div className="Sample__container">
         <main className="Sample__container__content">
-          <QrSvg value={value} />
+          <QrSvg value={value} width={256} />
           <div>
             <label>
               <input type="text" onChange={onChange} value={value} />
