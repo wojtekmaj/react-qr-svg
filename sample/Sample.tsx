@@ -6,7 +6,7 @@ import './Sample.css';
 export default function Sample() {
   const [value, setValue] = useState('Hello world');
 
-  function onChange(event) {
+  function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     setValue(event.target.value);
   }
 
