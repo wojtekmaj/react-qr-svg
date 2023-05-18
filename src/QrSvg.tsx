@@ -47,7 +47,7 @@ export type TypeNumber =
 
 export type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
 
-type QrCodeProps = {
+export type QrSvgProps = {
   bgColor?: string;
   cellClassPrefix?: string;
   fgColor?: string;
@@ -75,7 +75,7 @@ function makePath(qrcode: QRCode, margin: number, reverse?: boolean) {
   return d;
 }
 
-export default function QRCode({
+export default function QrSvg({
   bgColor = '#fff',
   cellClassPrefix,
   fgColor = '#000',
@@ -84,7 +84,7 @@ export default function QRCode({
   type = 0,
   value = '',
   ...otherProps
-}: QrCodeProps & Omit<React.SVGProps<SVGSVGElement>, keyof QrCodeProps>) {
+}: QrSvgProps & Omit<React.SVGProps<SVGSVGElement>, keyof QrSvgProps>) {
   const qrcode = useMemo(() => {
     const qrcode = qrcodeGenerator(type, level);
     qrcode.addData(value);
@@ -108,7 +108,7 @@ export default function QRCode({
   );
 }
 
-QRCode.propTypes = {
+QrSvg.propTypes = {
   bgColor: PropTypes.string,
   cellClassPrefix: PropTypes.string,
   fgColor: PropTypes.string,
