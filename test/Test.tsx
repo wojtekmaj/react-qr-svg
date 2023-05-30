@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import QrSvg from '@wojtekmaj/react-qr-svg/src';
+import QrSvg from '@wojtekmaj/react-qr-svg';
 
-import ColorOptions from './ColorOptions';
-import QualityOptions from './QualityOptions';
-import SizeOptions from './SizeOptions';
-import ValueOptions from './ValueOptions';
+import ColorOptions from './ColorOptions.js';
+import QualityOptions from './QualityOptions.js';
+import SizeOptions from './SizeOptions.js';
+import ValueOptions from './ValueOptions.js';
 
 import './Test.css';
 
