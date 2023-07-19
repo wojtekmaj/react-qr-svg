@@ -30,7 +30,7 @@ Add React-QR-SVG to your project by executing `npm install @wojtekmaj/react-qr-s
 
 Here's an example of basic usage:
 
-```js
+```tsx
 import QrSvg from '@wojtekmaj/react-qr-svg';
 
 function MyApp() {
