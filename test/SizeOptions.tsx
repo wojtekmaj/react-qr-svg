@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type SizeOptionsProps = {
   setSize: (size: TypeNumber) => void;
@@ -51,10 +50,3 @@ export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: Si
     </fieldset>
   );
 }
-
-SizeOptions.propTypes = {
-  setSize: PropTypes.func.isRequired,
-  setSizeAuto: PropTypes.func.isRequired,
-  size: PropTypes.number,
-  sizeAuto: PropTypes.bool,
-};

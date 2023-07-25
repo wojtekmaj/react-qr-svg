@@ -1523,7 +1523,6 @@ __metadata:
   dependencies:
     "@vitejs/plugin-react": ^3.0.0
     "@wojtekmaj/react-qr-svg": "portal:../"
-    prop-types: ^15.6.0
     react: ^18.2.0
     react-dom: ^18.2.0
     vite: ^4.0.0

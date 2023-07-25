@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type QualityOptionsProps = {
   quality: ErrorCorrectionLevel;
@@ -64,8 +63,3 @@ export default function QualityOptions({ quality, setQuality }: QualityOptionsPr
     </fieldset>
   );
 }
-
-QualityOptions.propTypes = {
-  quality: PropTypes.string,
-  setQuality: PropTypes.func.isRequired,
-};

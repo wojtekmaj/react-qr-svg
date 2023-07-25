@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type ValueOptionsProps = {
   setValue: (value: string) => void;
@@ -28,8 +27,3 @@ export default function ValueOptions({ setValue, value }: ValueOptionsProps) {
     </fieldset>
   );
 }
-
-ValueOptions.propTypes = {
-  setValue: PropTypes.func.isRequired,
-  value: PropTypes.string,
-};

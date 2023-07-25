@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 type ColorOptionsProps = {
   bgColor?: string;
@@ -42,10 +41,3 @@ export default function ColorOptions({
     </fieldset>
   );
 }
-
-ColorOptions.propTypes = {
-  bgColor: PropTypes.string,
-  fgColor: PropTypes.string,
-  setBgColor: PropTypes.func.isRequired,
-  setFgColor: PropTypes.func.isRequired,
-};
