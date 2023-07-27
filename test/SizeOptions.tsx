@@ -1,5 +1,7 @@
 import React from 'react';
 
+import type { TypeNumber } from '@wojtekmaj/react-qr-svg';
+
 type SizeOptionsProps = {
   setSize: (size: TypeNumber) => void;
   setSizeAuto: (sizeAuto: boolean) => void;
