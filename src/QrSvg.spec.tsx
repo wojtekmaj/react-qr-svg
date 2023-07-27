@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import React from 'react';
 import { render } from '@testing-library/react';
 
-import QrSvg from './QrSvg';
+import QrSvg from './QrSvg.js';
 
 describe('<QrSvg /> component', () => {
   it('renders svg element properly', () => {
