@@ -8,7 +8,7 @@ import ValueOptions from './ValueOptions';
 
 import './Test.css';
 
-import type { ErrorCorrectionLevel, TypeNumber } from './shared/types';
+import type { ErrorCorrectionLevel, TypeNumber } from '@wojtekmaj/react-qr-svg';
 
 export default function Test() {
   const [bgColor, setBgColor] = useState<string>();
