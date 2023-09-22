@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import QrSvg from '@wojtekmaj/react-qr-svg';
 
 import './Sample.css';

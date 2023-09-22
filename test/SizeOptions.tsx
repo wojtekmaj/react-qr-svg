@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { TypeNumber } from '@wojtekmaj/react-qr-svg';
 
 type SizeOptionsProps = {

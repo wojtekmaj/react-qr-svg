@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ValueOptionsProps = {
   setValue: (value: string) => void;
   value?: string;

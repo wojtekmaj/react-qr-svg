@@ -1,5 +1,3 @@
-import React from 'react';
-
 type ColorOptionsProps = {
   bgColor?: string;
   fgColor?: string;

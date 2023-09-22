@@ -1,5 +1,3 @@
-import React from 'react';
-
 import type { ErrorCorrectionLevel } from '@wojtekmaj/react-qr-svg';
 
 type QualityOptionsProps = {
