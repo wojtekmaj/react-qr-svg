@@ -42,7 +42,7 @@
     "qrcode-generator": "^1.4.4"
   },
   "devDependencies": {
-    "@testing-library/jest-dom": "^5.11.5",
+    "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/react": "*",
     "eslint": "^8.26.0",
