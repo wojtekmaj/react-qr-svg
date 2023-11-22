@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/v/@wojtekmaj/react-qr-svg.svg)](https://www.npmjs.com/package/@wojtekmaj/react-qr-svg) ![downloads](https://img.shields.io/npm/dt/@wojtekmaj/react-qr-svg.svg) [![CI](https://github.com/wojtekmaj/react-qr-svg/workflows/CI/badge.svg)](https://github.com/wojtekmaj/react-qr-svg/actions)
+[![npm](https://img.shields.io/npm/v/@wojtekmaj/react-qr-svg.svg)](https://www.npmjs.com/package/@wojtekmaj/react-qr-svg) ![downloads](https://img.shields.io/npm/dt/@wojtekmaj/react-qr-svg.svg) [![CI](https://github.com/wojtekmaj/react-qr-svg/actions/workflows/ci.ymlflows/ci.yml/badge.svg)](https://github.com/wojtekmaj/react-qr-svg/actions)
 
 # React-QR-SVG
 
