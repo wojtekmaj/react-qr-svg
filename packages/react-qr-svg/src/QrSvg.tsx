@@ -48,12 +48,54 @@ export type TypeNumber =
 export type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
 
 export type QrSvgProps = {
+  /**
+   * Background color.
+   *
+   * @default 'white'
+   * @example 'beige'
+   * @example '#fefefe'
+   */
   bgColor?: string;
+  /**
+   * Cell class name prefix.
+   *
+   * @example 'qr-svg__cell'
+   */
   cellClassPrefix?: string;
+  /**
+   * Foreground color.
+   *
+   * @default 'black'
+   * @example 'black'
+   * @example '#000000'
+   */
   fgColor?: string;
+  /**
+   * [Error correction level](https://en.wikipedia.org/wiki/QR_code#Error_correction). Can be `"L"`, `"M"`, `"Q"` and `"H"`.
+   *
+   * @default 'L'
+   * @example 'M'
+   */
   level?: ErrorCorrectionLevel;
+  /**
+   * Margin in pixels.
+   *
+   * @default 0
+   * @example 4
+   */
   margin?: number;
+  /**
+   * Type (size). Can be any number from 0 to 40. Set to `0` or leave as undefined to use the smallest possible size.
+   *
+   * @default 0
+   * @example 10
+   */
   type?: TypeNumber;
+  /**
+   * Value to render.
+   *
+   * @example 'Hello world'
+   */
   value: string;
 };
 
