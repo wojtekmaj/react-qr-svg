@@ -75,7 +75,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/wojtekmaj/react-qr-svg.git",
+    "url": "git+https://github.com/wojtekmaj/react-qr-svg.git",
     "directory": "packages/react-qr-svg"
   },
   "funding": "https://github.com/wojtekmaj/react-qr-svg?sponsor=1"
