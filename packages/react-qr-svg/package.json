@@ -46,7 +46,7 @@
     "@testing-library/react": "^15.0.0",
     "@types/react": "*",
     "eslint": "^8.56.0",
-    "eslint-config-wojtekmaj": "^0.11.0",
+    "eslint-config-wojtekmaj": "^1.0.0",
     "happy-dom": "^12.6.0",
     "prettier": "^3.2.0",
     "react": "^18.2.0",
