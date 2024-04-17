@@ -110,7 +110,7 @@ function makePath(qrcode: QRCode, margin: number, reverse?: boolean) {
 
   for (let row = 0; row < moduleCount; row++) {
     for (let col = 0; col < moduleCount; col++) {
-      if (qrcode.isDark(row, col) === (reverse ? false : true)) {
+      if (qrcode.isDark(row, col) === !reverse) {
         d += `M${col + margin},${row + margin}${rect}`;
       }
     }
