@@ -144,7 +144,13 @@ export default function QrSvg({
   const fgClassName = cellClassPrefix && `${cellClassPrefix} ${cellClassPrefix}-filled`;
 
   return (
-    <svg shapeRendering="crispEdges" viewBox={`0 0 ${size} ${size}`} {...otherProps}>
+    <svg
+      role="img"
+      aria-label={value}
+      shapeRendering="crispEdges"
+      viewBox={`0 0 ${size} ${size}`}
+      {...otherProps}
+    >
       <path d={bgPath} fill={bgColor} className={bgClassName} />
       <path d={fgPath} fill={fgColor} className={fgClassName} />
     </svg>
