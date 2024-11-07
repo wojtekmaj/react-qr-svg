@@ -10,6 +10,6 @@ describe('<QrSvg /> component', () => {
     const firstChild = container.children[0];
 
     expect(firstChild).toBeInTheDocument();
-    expect(firstChild?.tagName).toBe('SVG');
+    expect(firstChild?.tagName).toBe('svg');
   });
 });
