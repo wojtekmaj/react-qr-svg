@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 import type { ErrorCorrectionLevel } from '@wojtekmaj/react-qr-svg';
 
 type QualityOptionsProps = {
@@ -6,6 +8,11 @@ type QualityOptionsProps = {
 };
 
 export default function QualityOptions({ quality, setQuality }: QualityOptionsProps) {
+  const qualityLId = useId();
+  const qualityMId = useId();
+  const qualityQId = useId();
+  const qualityHId = useId();
+
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value: nextValue } = event.target;
 
@@ -19,46 +26,46 @@ export default function QualityOptions({ quality, setQuality }: QualityOptionsPr
       <div>
         <input
           checked={quality === 'L'}
-          id="qualityL"
+          id={qualityLId}
           name="quality"
           onChange={onChange}
           type="radio"
           value="L"
         />
-        <label htmlFor="qualityL">L (Low)</label>
+        <label htmlFor={qualityLId}>L (Low)</label>
       </div>
       <div>
         <input
           checked={quality === 'M'}
-          id="qualityM"
+          id={qualityMId}
           name="quality"
           onChange={onChange}
           type="radio"
           value="M"
         />
-        <label htmlFor="qualityM">M (Medium)</label>
+        <label htmlFor={qualityMId}>M (Medium)</label>
       </div>
       <div>
         <input
           checked={quality === 'Q'}
-          id="qualityQ"
+          id={qualityQId}
           name="quality"
           onChange={onChange}
           type="radio"
           value="Q"
         />
-        <label htmlFor="qualityQ">Q (Quartile)</label>
+        <label htmlFor={qualityQId}>Q (Quartile)</label>
       </div>
       <div>
         <input
           checked={quality === 'H'}
-          id="qualityH"
+          id={qualityHId}
           name="quality"
           onChange={onChange}
           type="radio"
           value="H"
         />
-        <label htmlFor="qualityH">H (High)</label>
+        <label htmlFor={qualityHId}>H (High)</label>
       </div>
     </fieldset>
   );

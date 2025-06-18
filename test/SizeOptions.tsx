@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 import type { TypeNumber } from '@wojtekmaj/react-qr-svg';
 
 type SizeOptionsProps = {
@@ -8,6 +10,9 @@ type SizeOptionsProps = {
 };
 
 export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: SizeOptionsProps) {
+  const sizeId = useId();
+  const sizeAutoId = useId();
+
   function onSizeChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
@@ -25,10 +30,10 @@ export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: Si
       <legend>Size options</legend>
 
       <div>
-        <label htmlFor="size">Size</label>
+        <label htmlFor={sizeId}>Size</label>
         <input
           disabled={sizeAuto}
-          id="size"
+          id={sizeId}
           onChange={onSizeChange}
           min={0}
           max={40}
@@ -40,12 +45,12 @@ export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: Si
       <div>
         <input
           checked={sizeAuto}
-          id="size-auto"
+          id={sizeAutoId}
           onChange={onSizeAutoChange}
           type="checkbox"
           name="size-auto"
         />
-        <label htmlFor="size-auto">Auto</label>
+        <label htmlFor={sizeAutoId}>Auto</label>
       </div>
     </fieldset>
   );

@@ -1,3 +1,5 @@
+import { useId } from 'react';
+
 type ColorOptionsProps = {
   bgColor?: string;
   fgColor?: string;
@@ -11,6 +13,9 @@ export default function ColorOptions({
   setBgColor,
   setFgColor,
 }: ColorOptionsProps) {
+  const bgColorId = useId();
+  const fgColorId = useId();
+
   function onBgColorChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
 
@@ -28,13 +33,13 @@ export default function ColorOptions({
       <legend>Color options</legend>
 
       <div>
-        <label htmlFor="bgColor">Background color</label>
-        <input id="bgColor" onChange={onBgColorChange} type="color" value={bgColor} />
+        <label htmlFor={bgColorId}>Background color</label>
+        <input id={bgColorId} onChange={onBgColorChange} type="color" value={bgColor} />
       </div>
 
       <div>
-        <label htmlFor="fgColor">Foreground color</label>
-        <input id="fgColor" onChange={onFgColorChange} type="color" value={fgColor} />
+        <label htmlFor={fgColorId}>Foreground color</label>
+        <input id={fgColorId} onChange={onFgColorChange} type="color" value={fgColor} />
       </div>
     </fieldset>
   );
