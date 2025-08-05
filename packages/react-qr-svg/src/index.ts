@@ -1,6 +1,6 @@
 import QrSvg from './QrSvg.js';
 
-export type { TypeNumber, ErrorCorrectionLevel, QrSvgProps } from './QrSvg.js';
+export type { ErrorCorrectionLevel, QrSvgProps, TypeNumber } from './QrSvg.js';
 
 export { QrSvg };
 
