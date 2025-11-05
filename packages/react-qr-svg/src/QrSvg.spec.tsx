@@ -12,4 +12,10 @@ describe('<QrSvg /> component', () => {
     expect(firstChild).toBeInTheDocument();
     expect(firstChild?.tagName).toBe('svg');
   });
+
+  it('matches snapshot', async () => {
+    const { container } = await render(<QrSvg value="Hello world" />);
+
+    expect(container.firstChild).toMatchSnapshot();
+  });
 });
