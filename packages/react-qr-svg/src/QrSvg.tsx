@@ -77,7 +77,7 @@ export type QrSvgProps = {
    */
   level?: ErrorCorrectionLevel;
   /**
-   * Margin in pixels.
+   * Quiet zone around the QR code, in modules. A value of 4 is recommended.
    *
    * @default 0
    * @example 4
