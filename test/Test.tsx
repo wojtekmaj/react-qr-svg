@@ -13,6 +13,7 @@ import type { ErrorCorrectionLevel, TypeNumber } from '@wojtekmaj/react-qr-svg';
 export default function Test() {
   const [bgColor, setBgColor] = useState<string>();
   const [fgColor, setFgColor] = useState<string>();
+  const [margin, setMargin] = useState(0);
   const [quality, setQuality] = useState<ErrorCorrectionLevel>('L');
   const [size, setSize] = useState<TypeNumber>(0);
   const [sizeAuto, setSizeAuto] = useState(true);
@@ -33,6 +34,8 @@ export default function Test() {
           />
           <QualityOptions quality={quality} setQuality={setQuality} />
           <SizeOptions
+            margin={margin}
+            setMargin={setMargin}
             size={size}
             sizeAuto={sizeAuto}
             setSize={setSize}
@@ -45,6 +48,7 @@ export default function Test() {
             bgColor={bgColor}
             fgColor={fgColor}
             level={quality}
+            margin={margin}
             type={sizeAuto ? 0 : size}
             value={value}
             width={256}

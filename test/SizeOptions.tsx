@@ -3,15 +3,31 @@ import { useId } from 'react';
 import type { TypeNumber } from '@wojtekmaj/react-qr-svg';
 
 type SizeOptionsProps = {
+  margin: number;
+  setMargin: (margin: number) => void;
   setSize: (size: TypeNumber) => void;
   setSizeAuto: (sizeAuto: boolean) => void;
   size?: TypeNumber;
   sizeAuto?: boolean;
 };
 
-export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: SizeOptionsProps) {
+export default function SizeOptions({
+  margin,
+  setMargin,
+  setSize,
+  setSizeAuto,
+  size,
+  sizeAuto,
+}: SizeOptionsProps) {
+  const marginId = useId();
   const sizeId = useId();
   const sizeAutoId = useId();
+
+  function onMarginChange(event: React.ChangeEvent<HTMLInputElement>) {
+    const { value } = event.target;
+
+    setMargin(Number(value));
+  }
 
   function onSizeChange(event: React.ChangeEvent<HTMLInputElement>) {
     const { value } = event.target;
@@ -51,6 +67,18 @@ export default function SizeOptions({ setSize, setSizeAuto, size, sizeAuto }: Si
           name="size-auto"
         />
         <label htmlFor={sizeAutoId}>Auto</label>
+      </div>
+
+      <div>
+        <label htmlFor={marginId}>Margin (modules)</label>
+        <input
+          id={marginId}
+          min={0}
+          onChange={onMarginChange}
+          step={1}
+          type="number"
+          value={margin}
+        />
       </div>
     </fieldset>
   );
