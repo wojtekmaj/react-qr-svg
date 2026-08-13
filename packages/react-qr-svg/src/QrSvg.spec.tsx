@@ -13,6 +13,16 @@ describe('<QrSvg /> component', () => {
     expect(firstChild?.tagName).toBe('svg');
   });
 
+  it('renders margin in QR modules', async () => {
+    const { container } = await render(<QrSvg margin={4} value="Hello world" />);
+
+    const svg = container.querySelector('svg');
+    const foregroundPath = svg?.querySelectorAll('path')[1];
+
+    expect(svg).toHaveAttribute('viewBox', '0 0 29 29');
+    expect(foregroundPath).toHaveAttribute('d', expect.stringMatching(/^M4,4/));
+  });
+
   it('matches snapshot', async () => {
     const { container } = await render(<QrSvg value="Hello world" />);
 
