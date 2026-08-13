@@ -88,5 +88,5 @@ body {
   flex-basis: 420px;
   flex-direction: column;
   flex-grow: 100;
-  align-items: stretch;
+  align-items: flex-start;
 }
